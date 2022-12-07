@@ -82,4 +82,6 @@ fig = px.choropleth(
 
 # Show the map
 fig.update_geos(fitbounds="locations", visible=False)
+
+# NOTE: map opens in browser.
 fig.show()
