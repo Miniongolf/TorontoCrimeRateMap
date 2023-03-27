@@ -5,15 +5,18 @@ import plotly.express as px
 crimeFile = pd.read_csv("Neighbourhood_Crime_Rates.csv")
 
 
-# Lists to select the years and crimes that affect the map.
+print("Select the years and crimes you want to see, separated by spaces (e.g. 2014 2015 2016)")
 
+# Lists to select the years and crimes that affect the map.
 allYears = [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]
 selectedYears = list(map(int, input("What years would you like to see? (2014 - 2021 inclusive): ").split()))
+selectedYears = allYears
 
 allCrimes = ["Assault", "AutoTheft", "BreakAndEnter", "Robbery", "TheftOver", "Homicide", "Shootings"]
-selectedCrimes = ["Assault", "AutoTheft", "BreakAndEnter", "Robbery", "TheftOver", "Homicide", "Shootings"]
 selectedCrimes = input("What crimes would you like to see? (Assault, AutoTheft, BreakAndEnter, Robbery, TheftOver, Homicide, Shootings): ").split()
+selectedCrimes = allCrimes
 
+print("\nLoading…\n")
 
 # Creates a DataFrame that only contains the data we need to make our graph.
 
